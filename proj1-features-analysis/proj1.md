@@ -4,7 +4,7 @@
 
 The project task consists of a binary classification problem aimed at performing fingerprint spoofing detection, specifically identifying genuine versus counterfeit fingerprint images. The dataset consists of labeled samples corresponding to the genuine (True, label 1) class and the fake (False, label 0) class. Samples are computed by a feature extractor summarizing high-level characteristics of fingerprint images. The data is 6-dimensional.
 
-The training files for the project are stored in `Project/trainData.txt`. The format of the file is similar to that of the Iris dataset, being a CSV file where each row represents a sample. The first 6 values of each row are the features, while the last value represents the class (1 or 0). The samples are not ordered.
+The training files for the project are stored in `data/trainData.txt`. The format of the file is similar to that of the Iris dataset, being a CSV file where each row represents a sample. The first 6 values of each row are the features, while the last value represents the class (1 or 0). The samples are not ordered.
 
 ## Task
 
