@@ -1,0 +1,9 @@
+counterfeit:
+  color: '#ff6d00cf'
+  mean_color: '#d72b00'
+  alpha: 0.7
+
+genuine:
+  color: '#36a122cf'
+  mean_color: '#42ff00'
+  alpha: 0.7

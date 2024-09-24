@@ -4,12 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import logging
 import os
+from omegaconf import OmegaConf
 
-COUNTERFEIT_COLOR = '#ff6d00cf'
-GENUINE_COLOR = '#36a122cf'
-COUNTERFEIT_MEAN_COLOR = '#d72b00'
-GENUINE_MEAN_COLOR = '#42ff00'
-ALPHA = 0.7
+# Load the YAML configuration file
+config = OmegaConf.load("config/default.yaml")
 
 def logger_config():
     # Set up basic configuration
@@ -66,8 +64,8 @@ def plot_hist(D, L, plots_dir):
         for dIdx in range(6):
             plt.figure()
             plt.xlabel(f"feature_{dIdx + 1}")
-            plt.hist(D0[dIdx, :], bins=10, color=COUNTERFEIT_COLOR, density=True, alpha=ALPHA, label='Counterfeit')
-            plt.hist(D1[dIdx, :], bins=10, color=GENUINE_COLOR, density=True, alpha=ALPHA, label='Genuine')
+            plt.hist(D0[dIdx, :], bins=10, color=config.counterfeit.color, density=True, alpha=config.counterfeit.alpha, label='Counterfeit')
+            plt.hist(D1[dIdx, :], bins=10, color=config.genuine.color, density=True, alpha=config.genuine.alpha, label='Genuine')
             plt.legend()
             plt.tight_layout()
             pdf.savefig()  # Save the current figure to the pdf
@@ -86,13 +84,13 @@ def plot_scatter(D, L, plots_dir):
                 plt.figure()
                 plt.xlabel(f"feature_{dIdx1+1}")
                 plt.ylabel(f"feature_{dIdx2+1}")
-                plt.scatter(D0[dIdx1, :], D0[dIdx2, :], color= COUNTERFEIT_COLOR, alpha = 0.4, label = 'Counterfeit')
-                plt.scatter(D1[dIdx1, :], D1[dIdx2, :], color= GENUINE_COLOR, alpha = 0.4, label = 'Genuine')
+                plt.scatter(D0[dIdx1, :], D0[dIdx2, :], color= config.counterfeit.color, alpha = 0.4, label = 'Counterfeit')
+                plt.scatter(D1[dIdx1, :], D1[dIdx2, :], color= config.genuine.color, alpha = 0.4, label = 'Genuine')
             
                 mean_D0 = np.mean(D0[[dIdx1, dIdx2], :], axis=1)
                 mean_D1 = np.mean(D1[[dIdx1, dIdx2], :], axis=1)
-                plt.scatter(mean_D0[0], mean_D0[1], color= COUNTERFEIT_MEAN_COLOR, marker="x", zorder=10)
-                plt.scatter(mean_D1[0], mean_D1[1], color= GENUINE_MEAN_COLOR, marker="x", zorder=10)
+                plt.scatter(mean_D0[0], mean_D0[1], color= config.counterfeit.mean_color, marker="x", zorder=10)
+                plt.scatter(mean_D1[0], mean_D1[1], color= config.genuine.mean_color, marker="x", zorder=10)
 
                 plt.legend()
                 plt.tight_layout() # Use with non-default font size to keep axis label inside the figure
