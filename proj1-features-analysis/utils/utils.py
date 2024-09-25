@@ -1,10 +1,9 @@
 import numpy as np
 import logging
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_pdf import PdfPages
-import logging
+import matplotlib.pyplot as plt # type: ignore
+from matplotlib.backends.backend_pdf import PdfPages # type: ignore
+from omegaconf import OmegaConf # type: ignore
 import os
-from omegaconf import OmegaConf
 
 # Load the YAML configuration file
 config = OmegaConf.load("config/default.yaml")
@@ -13,9 +12,9 @@ def logger_config():
     # Set up basic configuration
     logging.basicConfig(
         level=logging.INFO,  # Set the minimum logging level for your application
-        format='from proj1 %(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler('app.log', mode='w'),  # Log to a file
+            logging.FileHandler('proj1-features-analysis/app.log', mode='w'),  # Log to a file
             logging.StreamHandler()  # Also log to the console
         ]
     )

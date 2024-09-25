@@ -1,3 +1,7 @@
+
+train:
+  path: 'data/trainData.txt'
+
 counterfeit:
   color: '#ff6d00cf'
   mean_color: '#d72b00'

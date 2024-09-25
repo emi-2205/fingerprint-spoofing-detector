@@ -1,7 +1,110 @@
-.DS_Store
-/bin
-/include
-/lib
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a Python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+coverage.xml
+*.log
 app.log
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+doc/source/_build
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Pyenv
+.python-version
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# VS Code environment data
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# Virtual environments
+bin/
+env/
+venv/
+ENV/
+venv.bak/
+.venv/
 pyvenv.cfg
-/utils
+
+# PyCharm
+.idea/
+
+# MacOS files
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# IDE settings
+*.swp
+*.swo
+
+# Python packaging artifacts
+*.whl
+*.lock
