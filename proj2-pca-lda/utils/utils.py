@@ -114,7 +114,7 @@ def pca(D, m):
 def pca_problem(D, L, plots_dir, m=6):
     DP, P = pca(D, m)
     plot_hist(DP, L, "PCA", plots_dir, m)
-    plot_scatter(DP, L, "PCA", plots_dir, m)
+    #plot_scatter(DP, L, "PCA", plots_dir, m)
 
 def compute_Sb_Sw(D, L):
     Sb = 0
@@ -145,7 +145,8 @@ def lda(D, L, m, left_label, right_label):
 
 def lda_problem(D, L, plots_dir, m=6):
     DP, W = lda(D, L, m, 0, 1)
-    plot_scatter(DP, L, "LDA", plots_dir, m)
+    # if m!=1:
+    #     plot_scatter(DP, L, "LDA", plots_dir, m)
     plot_hist(DP, L, "LDA", plots_dir, m)
 
 def split_db_2to1(D, L, seed=0):
